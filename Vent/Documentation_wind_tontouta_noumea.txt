@@ -1,0 +1,773 @@
+IDENTIFICATION: CDS header
+	Length:0
+
+USAF: Identification FIXED-WEATHER-STATION USAF MASTER STATION CATALOG identifier
+
+	The identifier that represents a FIXED-WEATHER-STATION. 
+	Length:6
+
+NCDC: Identification FIXED-WEATHER-STATION NCDC WBAN identifier
+
+	The identifier that represents a FIXED-WEATHER-STATION. 
+	Length:5
+
+DATE: Identification GEOPHYSICAL-POINT-OBSERVATION date
+
+	The date of a GEOPHYSICAL-POINT-OBSERVATION. 
+	Length:8
+
+HRMN: Identification GEOPHYSICAL-POINT-OBSERVATION time
+
+	The time of a GEOPHYSICAL-POINT-OBSERVATION based on Coordinated Universal 
+	Time Code (UTC). 
+	Length:4
+
+I: Identification GEOPHYSICAL-POINT-OBSERVATION data source flag
+
+	The flag of a GEOPHYSICAL-POINT-OBSERVATION showing the source or combination 
+	of sources used in creating the observation. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: USAF hourly observation, candidate for merge with NCDC Surface Hourly (not yet merged, failed element cross-checks)
+2: NCDC hourly observation, candidate for merge with USAF Surface Hourly (not yet merged, failed element cross-checks)
+3: USAF hourly/NCDC hourly merged observation
+4: USAF Surface Hourly observation
+5: NCDC hourly observation
+6: ASOS/AWOS observation from NCDC*
+7: ASOS/AWOS observation merged with USAF Surface Hourly observation*
+8: MAPSO observation (NCDC)*
+A: USAF hourly/NCDC hourly precipitation merged observation, candidate for merge with NCDC Surface Hourly (not yet merged, failed element cross-checks)
+B: NCDC hourly/NCDC hourly precipitation merged observation, candidate for merge with USAF Surface Hourly (not yet merged, failed element cross-checks)
+C: USAF hourly/NCDC hourly/NCDC hourly precipitation merged observation
+D: USAF hourly/NCDC hourly precipitation merged observation
+E: NCDC hourly/NCDC hourly precipitation merged observation
+F: Form OMR/1001 - Weather Bureau city office (keyed data)*
+G: SAO surface airways observation, pre-1949 (keyed data)*
+H: SAO surface airways observation, 1965-1981 format/period (keyed data)*
+I: Climate Reference Network observation*
+J: Cooperative Network observation*
+K: Radiation Network observation*
+L: Data from Climate Data Modernization Program (CDMP) data source*
+M: National Renewable Energy Laboratory (NREL)*
+N: NCAR / NCDC cooperative effort (various national datasets)*
+
+
+TYPE: Identification GEOPHYSICAL-REPORT-TYPE code
+
+	The code that denotes the type of geophysical surface observation. 
+	Length:5
+	Default Value:99999
+	Table of Values:
+
+	AERO: Aerological report
+	AUST: Dataset from Australia*
+	AUTO: Report from an automatic station
+	BOGUS: Bogus report
+	BRAZ: Dataset from Brazil*
+	COOPD: US Cooperative Network summary of day report*
+	COOPS: US Cooperative Network soil temperature report*
+	CRB: Climate Reference Book data from CDMP*
+	CRN05: Climate Reference Network report, with 5-minute reporting interval*
+	CRN15: Climate Reference Network report, with 15-minute reporting interval*
+	FM-12: SYNOP Report of surface observation form a fixed land station
+	FM-13: SHIP Report of surface observation from a sea station
+	FM-14: SYNOP MOBIL Report of surface observation from a mobile land station
+	FM-15: METAR Aviation routine weather report
+	FM-16: SPECI Aviation selected special weather report
+	FM-18: BUOY Report of a buoy observation
+	GREEN: Dataset from Greenland*
+	MESOS: MESONET operated civilian or government agency
+	MEXIC: Dataset from Mexico*
+	NSRDB: National Solar Radiation Data Base
+	PCP15: US 15-minute precipitation network report*
+	PCP60: US 60-minute precipitation network report*
+	S-S-A: Synoptic, airways, and auto merged report
+	SA-AU: Airways and auto merged report
+	SAO: Airways report (includes record specials)
+	SAOSP: Airways special report (excluding record specials)
+	SHEF: Standard Hydrologic Exchange Format
+	SMARS: Supplementary airways station report
+	SOD: Summary of day report from U.S. ASOS or AWOS station*
+	SOM: Summary of month report from U.S. ASOS or AWOS station*
+	SURF: Surface Radiation Network report*
+	SY-AE: Synoptic and aero merged report
+	SY-AU: Synoptic and auto merged report
+	SY-MT: Synoptic and METAR merged report
+	SY-SA: Synoptic and airways merged report
+	WBO: Weather Bureau Office*
+	WNO: Washington Naval Observatory
+	
+
+WIND: WIND-OBSERVATION header
+	Length:0
+
+DIR: WIND-OBSERVATION direction angle
+
+	The angle, measured in a clockwise direction, between true north and the 
+	direction from which the wind is blowing. 
+	Length:3
+	Scale:1
+	Unit:Angular Degrees
+	Default Value:999
+	Table of Values:
+
+	999: Missing.  If type code (below) = V, then 999 indicates variable wind direction.
+	
+
+Q: WIND-OBSERVATION direction quality code
+
+	The code that denotes a quality status of a reported WIND-OBSERVATION direction 
+	angle. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check , data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+I: WIND-OBSERVATION type code
+
+	The code that denotes the character of the WIND-OBSERVATION. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	A: Abridged Beaufort
+	B: Beaufort
+	C: Calm
+	H: 5-Minute Average Speed
+	N: Normal
+	Q: Squall
+	R: 60-Minute Average Speed
+	T: 180 Minute Average Speed
+	V: Variable
+	
+
+SPD: WIND-OBSERVATION speed rate
+
+	The rate of horizontal travel of air past a fixed point. 
+	Length:4
+	Scale:10
+	Unit:Meters per Second
+	Default Value:9999
+
+Q: WIND-OBSERVATION speed quality code
+
+	The code that denotes a quality status of a reported WIND-OBSERVATION speed 
+	rate. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check , data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+TEMP: AIR-TEMPERATURE-OBSERVATION header
+	Length:0
+
+TEMP: AIR-TEMPERATURE-OBSERVATION air temperature
+
+	The temperature of the air. 
+	Length:5
+	Scale:10
+	Unit:Degrees Celsius
+	Default Value:+9999
+
+Q: AIR-TEMPERATURE-OBSERVATION air temperature quality code
+
+	The code that denotes a quality status of an AIR-TEMPERATURE-OBSERVATION. 
+	
+	Length:1
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check , data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	A: Data value flagged as suspect, but accepted as good value
+	C: Temperature and dewpoint received from Automated Weather Observing Systems (AWOS) are reported in whole degrees Celsius. Automated QC flags these values, but they are accepted as valid.
+	I: Data value not originally in data, but inserted by validator
+	M: Manual changes made to value based on information provided by NWS or FAA
+	P: Data value not originally flagged as suspect, but replaced by validator
+	R: Data value replaced with value computed by NCDC software
+	U: Data value replaced with edited value
+	
+
+SLP: ATMOSPHERIC-PRESSURE-OBSERVATION header
+	Length:0
+
+SLP: ATMOSPHERIC-PRESSURE-OBSERVATION sea level pressure
+
+	The air pressure relative to Mean Sea Level (MSL). 
+	Length:5
+	Scale:10
+	Unit:Hectopascals
+	Default Value:99999
+
+Q: ATMOSPHERIC-PRESSURE-OBSERVATION sea level pressure quality code
+
+	The code that denotes a quality status of the sea level pressure of an 
+	ATMOSPHERIC-PRESSURE-OBSERVATION. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check , data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+PRECIP: 15 Minute LIQUID-PRECIPITATION header
+	Length:3
+
+AMT: 15 Minute LIQUID-PRECIPITATION HPD (Hourly Precipitation Data network) gauge value
+
+	The HPD Gauge value that is measured at the time indicated. 
+	Length:4
+	Scale:10
+	Unit:Millimeters
+	Default Value:9999
+
+I: 15 Minute LIQUID-PRECIPITATION HPD gauge value condition code
+
+	Not used at this time.  Value set to missing. 
+	Length:1
+	Default Value:9
+
+Q: 15 Minute LIQUID-PRECIPITATION HPD gauge value quality code
+
+	The code that denotes a quality status of the reported gauge value. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check, data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+PRECIP: 15 Minute LIQUID-PRECIPITATION header #2
+	Length:3
+
+AMT: 15 Minute LIQUID-PRECIPITATION #2 HPD (Hourly Precipitation Data network) gauge value
+
+	The HPD Gauge value that is measured at the time indicated. 
+	Length:4
+	Scale:10
+	Unit:Millimeters
+	Default Value:9999
+
+I: 15 Minute LIQUID-PRECIPITATION #2 HPD gauge value condition code
+
+	Not used at this time.  Value set to missing. 
+	Length:1
+	Default Value:9
+
+Q: 15 Minute LIQUID-PRECIPITATION #2 HPD gauge value quality code
+
+	The code that denotes a quality status of the reported gauge value. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check, data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+PRECIP: 15 Minute LIQUID-PRECIPITATION header #3
+	Length:3
+
+AMT: 15 Minute LIQUID-PRECIPITATION #3 HPD (Hourly Precipitation Data network) gauge value
+
+	The HPD Gauge value that is measured at the time indicated. 
+	Length:4
+	Scale:10
+	Unit:Millimeters
+	Default Value:9999
+
+I: 15 Minute LIQUID-PRECIPITATION #3 HPD gauge value condition code
+
+	Not used at this time.  Value set to missing. 
+	Length:1
+	Default Value:9
+
+Q: 15 Minute LIQUID-PRECIPITATION #3 HPD gauge value quality code
+
+	The code that denotes a quality status of the reported gauge value. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check, data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+PRECIP: 15 Minute LIQUID-PRECIPITATION header #4
+	Length:3
+
+AMT: 15 Minute LIQUID-PRECIPITATION #4 HPD (Hourly Precipitation Data network) gauge value
+
+	The HPD Gauge value that is measured at the time indicated. 
+	Length:4
+	Scale:10
+	Unit:Millimeters
+	Default Value:9999
+
+I: 15 Minute LIQUID-PRECIPITATION #4 HPD gauge value condition code
+
+	Not used at this time.  Value set to missing. 
+	Length:1
+	Default Value:9
+
+Q: 15 Minute LIQUID-PRECIPITATION #4 HPD gauge value quality code
+
+	The code that denotes a quality status of the reported gauge value. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	4: Passed gross limits check, data originate from an NCDC data source
+	5: Passed all quality control checks, data originate from an NCDC data source
+	6: Suspect, data originate from an NCDC data source
+	7: Erroneous, data originate from an NCDC data source
+	9: Passed gross limits check if element is present
+	
+
+SOLAR: Net Solar Radiation Section header
+	Length:3
+
+TIME: Net Solar Radiation Section Net solar radiation data time period
+
+	Time period in minutes, for which the data in this section (GO1) pertainseg, 
+	0060 = 60 minutes (1 hour). 
+	Length:4
+	Unit:Minutes
+	Default Value:9999
+
+NTSO: Net Solar Radiation Section Net solar radiation
+
+	The difference between global radiation and upwelling global radiation 
+	measured in Watts per square meter (W/m2).  If negative, left most position 
+	contains a "-" sign. 
+	Length:4
+	Scale:1
+	Unit:Watts Per Square Meter
+	Default Value:9999
+
+Q: Net Solar Radiation Section Net solar radiation quality code
+
+	The code that denotes a quality status of the reported net solar radiation 
+	value. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	
+
+NTIR: Net Solar Radiation Section Net infrared radiation
+
+	The difference between downwelling infrared and upwelling infrared measured 
+	in Watts per square meter (W/m2).  If negative, left most position contains 
+	a "-" sign. 
+	Length:4
+	Scale:1
+	Unit:Watts Per Square Meter
+	Default Value:9999
+
+Q: Net Solar Radiation Section Net infrared radiation quality code
+
+	The code that denotes a quality status of the reported net infrared radiation 
+	value. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	
+
+NTRD: Net Solar Radiation Section Net radiation
+
+	The total of Net Solar and Net Infrared radiation measured in Watts per 
+	square meter (W/m2). 
+	Length:4
+	Scale:1
+	Unit:Watts Per Square Meter
+	Default Value:9999
+
+Q: Net Solar Radiation Section Net radiation quality code
+
+	The code that denotes a quality status of the reported net radiation value. 
+	
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed gross limits check
+	1: Passed all quality control checks
+	2: Suspect
+	3: Erroneous
+	
+
+WIND: Hourly Wind Section header
+	Length:3
+
+MXGS: Hourly Wind Section WIND_MAX maximum gust
+
+	The maximum 10 second wind speed. 
+	Length:4
+	Scale:10
+	Unit:Meters per Second
+	Default Value:9999
+
+Q: Hourly Wind Section WIND_MAX_QC quality code
+
+	The code that indicates ISD's evaluation of the quality status of the maximum 
+	gust. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section WIND_MAX_FLAG quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the maximum gust.  Most users will find the preceding quality 
+	code WIND_MAX_QC to be the simplest and most useful quality indicator. 
+	
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+MDR: Hourly Wind Section WIND_MAX direction of the maximum gust
+
+	The direction measured in clockwise angular degrees from which the maximum 
+	10 second wind speed occurred. 
+	Length:3
+	Scale:1
+	Unit:Angular Degrees
+	Default Value:999
+
+Q: Hourly Wind Section WIND_MAX_QC direction quality code
+
+	The code that indicates ISD's evaluation of the quality status of the maximum 
+	gust direction. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section WIND_MAX_FLAG direction quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the maximum gust direction.  Most users will find the preceding 
+	quality code WIND_MAX_QC to be the simplest and most useful quality indicator. 
+	
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+WDSPS: Hourly Wind Section WIND_STD wind speed standard deviation
+
+	The wind speed standard deviation. 
+	Length:5
+	Scale:100
+	Default Value:99999
+
+Q: Hourly Wind Section WIND_STD_QC quality code
+
+	The code that indicates ISD's evaluation of the quality status of the wind 
+	speed standard deviation. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section WIND_STD_FLAG quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the wind speed standard deviation.  Most users will find the 
+	preceding quality code WIND_STD_QC to be the simplest and most useful quality 
+	indicator. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+WDIRS: Hourly Wind Section WIND_DIR_STD wind direction standard deviation
+
+	The wind direction standard deviation. 
+	Length:5
+	Scale:100
+	Default Value:99999
+
+Q: Hourly Wind Section WIND_DIR_STD_QC quality code
+
+	The code that indicates ISD's evaluation of the quality status of the wind 
+	direction standard deviation. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section WIND_DIR_STD_FLAG quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the wind direction standard deviation.  Most users will find 
+	the preceding quality code WIND_STD_QC to be the simplest and most useful 
+	quality indicator. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+WIND: Hourly Wind Section header #2
+	Length:3
+
+MXGS: Hourly Wind Section #2 WIND_MAX maximum gust
+
+	The maximum 10 second wind speed. 
+	Length:4
+	Scale:10
+	Unit:Meters per Second
+	Default Value:9999
+
+Q: Hourly Wind Section #2 WIND_MAX_QC quality code
+
+	The code that indicates ISD's evaluation of the quality status of the maximum 
+	gust. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section #2 WIND_MAX_FLAG quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the maximum gust.  Most users will find the preceding quality 
+	code WIND_MAX_QC to be the simplest and most useful quality indicator. 
+	
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+MDR: Hourly Wind Section #2 WIND_MAX direction of the maximum gust
+
+	The direction measured in clockwise angular degrees from which the maximum 
+	10 second wind speed occurred. 
+	Length:3
+	Scale:1
+	Unit:Angular Degrees
+	Default Value:999
+
+Q: Hourly Wind Section #2 WIND_MAX_QC direction quality code
+
+	The code that indicates ISD's evaluation of the quality status of the maximum 
+	gust direction. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section #2 WIND_MAX_FLAG direction quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the maximum gust direction.  Most users will find the preceding 
+	quality code WIND_MAX_QC to be the simplest and most useful quality indicator. 
+	
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+WDSPS: Hourly Wind Section #2 WIND_STD wind speed standard deviation
+
+	The wind speed standard deviation. 
+	Length:5
+	Scale:100
+	Default Value:99999
+
+Q: Hourly Wind Section #2 WIND_STD_QC quality code
+
+	The code that indicates ISD's evaluation of the quality status of the wind 
+	speed standard deviation. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section #2 WIND_STD_FLAG quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the wind speed standard deviation.  Most users will find the 
+	preceding quality code WIND_STD_QC to be the simplest and most useful quality 
+	indicator. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+WDIRS: Hourly Wind Section #2 WIND_DIR_STD wind direction standard deviation
+
+	The wind direction standard deviation. 
+	Length:5
+	Scale:100
+	Default Value:99999
+
+Q: Hourly Wind Section #2 WIND_DIR_STD_QC quality code
+
+	The code that indicates ISD's evaluation of the quality status of the wind 
+	direction standard deviation. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	1: Passed all quality control checks
+	3: Failed all quality control checks
+	
+
+Q: Hourly Wind Section #2 WIND_DIR_STD_FLAG quality code
+
+	A flag that indicates the network's internal evaluation of the quality 
+	status of the wind direction standard deviation.  Most users will find 
+	the preceding quality code WIND_STD_QC to be the simplest and most useful 
+	quality indicator. 
+	Length:1
+	Default Value:9
+	Table of Values:
+
+	0: Passed all quality control checks
+	other: Did not pass all quality checks
+	
+
+REMARKS: Remarks header
+
+REMARKS: Remarks
+	Length:-250
+
+QCP: Identification METEOROLOGICAL-POINT-OBSERVATION quality control process name
+
+	The name of the quality control process applied to a weather observation. 
+	
+	Length:4
+
+AVW: Hourly Wind Section WIND_AVG time period
+
+	Time period in minutes, for which the data in this section (OB1) pertainseg, 
+	060 = 60 minutes (1 hour). 
+	Length:3
+	Unit:Minutes
+	Default Value:999
+
+AVW: Hourly Wind Section #2 WIND_AVG time period
+
+	Time period in minutes, for which the data in this section (OB1) pertainseg, 
+	060 = 60 minutes (1 hour). 
+	Length:3
+	Unit:Minutes
+	Default Value:999
+

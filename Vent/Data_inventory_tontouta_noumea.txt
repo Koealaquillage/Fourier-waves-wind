@@ -1,0 +1,6 @@
+915900 99999 LA TONTOUTA                    2016 1735 1594 1707 1674 1732 1675 1719 1725 1678 1736 1671 1735
+915920 99999 NOUMEA                         2016    0    0    0    0    2    1    2    0    1    0    0    0
+
+
+Total Surface Hourly Observations Available: 20387
+Total Station-Years: 2
